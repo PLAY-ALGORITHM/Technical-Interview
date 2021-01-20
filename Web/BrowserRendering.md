@@ -20,6 +20,8 @@ HTML파일은 DOM(Document Object Model)로, CSS파일은 CSSOM(CSS Object Model
 	   2) Tokenizing : 브라우저가 xml파일 형식과 같은 문자열을 토큰으로 변환한다. <br>
 	   3) Lexing : 토큰들이 해당 속성 및 규칙을 정의하는 객체로 변환된다.<br>
 	   4) DOM construction : HTML마크업이 여러태그 간의 관계를 정의하기 때문에 생성된 객체들은 트리 데이터 구조에 연결된다. 
+
+	   
  <br>
 :mag: java script인 script태그를 만나면 스크립트가 해석, 실행되는 동안 파싱은 중단된다. 스타일 시트는 DOM트리를 변경하지 않기 때문에 파싱을 기다리거나 중단하지 않는다고 한다.
 

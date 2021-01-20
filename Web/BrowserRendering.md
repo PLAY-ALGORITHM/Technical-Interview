@@ -31,11 +31,11 @@ HTML파일은 DOM(Document Object Model)로, CSS파일은 CSSOM(CSS Object Model
 
 브라우저는 페이지의 DOM을 생성하는 동안 외부 CSS 파일을 참조하는 link tag를 접한다. 브라우저는 이 리소스에 대한 요청을 즉시 발송하고 요청의 결과로 아래와 같은 각 태그에 대한 스타일 컨텐츠가 반환된다.
 
- body { font-size:  16px  }
- p { font-weight: bold }
- span { color: red }
- p span { display: none }
- img {  float: right }
+ body { font-size:  16px  }<br>
+ p { font-weight: bold }<br>
+ span { color: red }<br>
+ p span { display: none }<br>
+ img {  float: right }<br>
 
 
 ### 3. Render Tree생성

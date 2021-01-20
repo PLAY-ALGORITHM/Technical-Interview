@@ -20,7 +20,7 @@ HTML파일은 DOM(Document Object Model)로, CSS파일은 CSSOM(CSS Object Model
 	   2) Tokenizing : 브라우저가 xml파일 형식과 같은 문자열을 토큰으로 변환한다. <br>
 	   3) Lexing : 토큰들이 해당 속성 및 규칙을 정의하는 객체로 변환된다.<br>
 	   4) DOM construction : HTML마크업이 여러태그 간의 관계를 정의하기 때문에 생성된 객체들은 트리 데이터 구조에 연결된다. 
-	   
+ <br>
 :mag: java script인 script태그를 만나면 스크립트가 해석, 실행되는 동안 파싱은 중단된다. 스타일 시트는 DOM트리를 변경하지 않기 때문에 파싱을 기다리거나 중단하지 않는다고 한다.
 
 	   
@@ -49,7 +49,7 @@ CCSOM 과 DOM트리가 결합하여 렌더링 트리를 형성한다.
 브라우저가 DOM과 CCSOM을 렌더링 트리에 결합한다. 이 트리는 페이지에 표시되는 모든 DOM 컨텐츠와 각 노드에 대한 CCSOM스타일 정보를 캡쳐한다. 실제 화면에 표현되는 노드들로만 구성된다.
 script tag, meta tag, span tag중 display:none과 같은 태그들은 렌더링 트리에서 생략된다.
 
-  
+<br>  
 :mag:  visibility:invisible은 렌더링이 되어있지만 보이지 않는 기능, display:none은 요소가 보이지 않으며 레이아웃에 포함되지 않으므로 렌더링 트리에서 제거됨. 따라서 display:none을 사용하는 것이 효율적일 수 있다고 한다.
 
 

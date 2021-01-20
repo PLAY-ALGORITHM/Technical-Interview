@@ -8,7 +8,7 @@
 ### 1. Loading
 서버에서 HTML 파일을 클라이언트(웹 브라우저)로 보내면 브라우저에서는 로딩을 통해 파일을 읽고, 팝업창을 열지 말지, 다운로드를 받을 지를 결정한다.
 
-### 2. Parising
+### 2. Parsing
 HTML파일은 DOM(Document Object Model)로, CSS파일은 CSSOM(CSS Object Model)로 변환된다.
    
    **2-1. HTML -> DOM(Parsing)** 

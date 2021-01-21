@@ -16,7 +16,7 @@
 |const | Block-level-Scope |
 
  ### 사전지식
- **범위(Scope)** 
+ **범위(Scope)** <br>
  선언된 변수가 미치는 범위를 뜻한다. Javascript는 함수 레벨 스코프(function-level-scope)를 따른다.
  
 **Reference**
@@ -117,7 +117,7 @@ console.log(hello); // hello!
 
 
 ### let
-**정의:** Java 언어를 기반으로 하는 Server Side 스크립트 언어
+
  1. let으로 변수 선언하면 값을 재정의 할 수 있다.
  ```javascript
 let hello='first hello';  // first hello
@@ -172,7 +172,7 @@ console.log(name)
 // Uncaught ReferenceError: Cannot access 'name' before initialization
 ```
  - **let,const가 변수를 선언하기 전에 참조할 수 없다고 해서 호이스팅이 이루어지지 않는 것일까?**
- - ** 정답은 '그렇지 않다'이다. 이를 이해하기 위해서는 자바스크립트에서 변수를 할당할 때 var와 let,const가 어떤 차이가 있는지 이해할 필요가 있다.
+ - 정답은 '그렇지 않다'이다. 이를 이해하기 위해서는 자바스크립트에서 변수를 할당할 때 var와 let,const가 어떤 차이가 있는지 이해할 필요가 있다.
  
   **Reference**
 1. https://dev-taem.tistory.com/14
@@ -254,6 +254,6 @@ PIZZA = 'good';
 2. https://medium.com/sjk5766/var-let-const-특징-및-scope-335a078cec04
 
 ## 마지막 정리
-**ES6를 사용 가능하다면 var 대신 let, const를 사용하자**
+**ES6를 사용 가능하다면 var 대신 let, const를 사용하자** <br>
 **값을 재할당 한다면 let, 재할당을 안한다면 const를 사용하자**
 

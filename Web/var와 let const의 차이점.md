@@ -72,7 +72,7 @@ console.log(chicken); // nice
  var chicken = 'nice';
  console.log(chicken); // 1
 ```
- - 변수가 선언도 되지 않았는데 참조 가능 (**변수 호이스팅)
+ - 변수가 선언도 되지 않았는데 참조 가능 (**변수 호이스팅**)
  ```javascript
  console.log(chicken); // undefined
  var chicken = 'nice'; // (할당)
@@ -106,13 +106,14 @@ console.log(hello); // hello!
  ```
  
 ```javascript
-  let chicken = 'nice'; //전역 변수가
+  let chicken = 'nice'; //전역 변수
   
   {
 	//ReferenceError: chicken is not defined
 	console.log(chicken);
 	let chicken = 'good'; // 지역 변수
 	console.log(chicken); // good
+  }
 ```
 
 

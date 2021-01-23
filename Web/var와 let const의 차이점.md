@@ -69,7 +69,7 @@ console.log(chicken); // nice
  var chicken = 'nice';
  console.log(chicken); // nice
  
- var chicken = 'nice';
+ var chicken = 1;
  console.log(chicken); // 1
 ```
  - 변수가 선언도 되지 않았는데 참조 가능 (**변수 호이스팅**)

@@ -255,6 +255,6 @@ PIZZA = 'good';
 2. https://medium.com/sjk5766/var-let-const-특징-및-scope-335a078cec04
 
 ## 마지막 정리
-**ES6를 사용 가능하다면 var 대신 let, const를 사용하자** <br>
+**ES6를 사용 가능하다면 되도록이면 var 대신 let, const를 사용하자** <br>
 **값을 재할당 한다면 let, 재할당을 안한다면 const를 사용하자**
 

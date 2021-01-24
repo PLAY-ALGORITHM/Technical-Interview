@@ -176,6 +176,35 @@ computed: {
 ```
 - 이제 vm.fullname = 'John Doe'를 실행하면 설정자가 호출되고 vm.firstName과 vm.lastName 이 그에 따라 업데이트 된다.
 
+- 또 다른 예시이다.
+```html
+ <div id = "app">
+   <input type = "text" v-model="info">
+        이름 : {{name}}, 나이 : {{age}} 
+    </div>
+```
+```javascript
+  let vm = new Vue({
+            el : "#app",
+            data : {
+                name : "아이유",
+                age : 29
+            },
+            computed : {
+                info : {
+                    set : function(v) {
+                        v = v.split(" ");
+                        this.name = v[0];
+                        this.age = v[1];
+                    },
+                    get : function() {
+                        return this.name + " " + this.age;
+                    },
+                },
+            }
+        });
+```
+
 ## :zap: methods의 사용 방식
 -----------
 

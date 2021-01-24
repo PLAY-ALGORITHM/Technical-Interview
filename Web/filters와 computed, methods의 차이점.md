@@ -303,7 +303,7 @@ computed: {
 ```
  :bulb: 위 예제의 결과창[1]
 
-![화면 캡처 2021-01-24 182919](https://user-images.githubusercontent.com/73863771/105626460-08fd4c80-5e73-11eb-8e87-525efba13052.png)
+![화면 캡처 2021-01-24 200859](https://user-images.githubusercontent.com/73863771/105628415-1c62e480-5e80-11eb-86c5-6a323eac97bc.png)
 
  :bulb: 위 예제의 결과창[2]
 

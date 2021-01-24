@@ -250,26 +250,30 @@ new Vue({
 
 - 두 방식 모두 같은 결과를 얻을 수 있다.
 ```html
-<p>뒤집힌 메시지: "{{ reversedMessage() }}"</p>
+<p>뒤집힌 메시지: "{{ reversedMessage1() }}"</p>
 ```
 ```javascript
 // 컴포넌트 내부
 methods: {
+  reversedMessage1: function () {
+    return this.message.split('').reverse().join('')
+  }
+}
+```
+```html
+<p>뒤집힌 메시지: "{{ reversedMessage2 }}"</p>
+```
+```javascript
+// 컴포넌트 내부
+computed: {
   reversedMessage: function () {
     return this.message.split('').reverse().join('')
   }
 }
 ```
-```javascript
-computed: {
-  now: function () {
-    return Date.now()
-  }
-}
-```
 - computed 속성 대신 메소드와 같은 함수를 정의 가능하다. 위의 표에서 말한 것처럼 최종 결과에 대한 두 가지 접근 방식은 서로 동일하다. 다만, 차이가 나는 부분은 **computed 속성은 종속 대상을 따라 저장(캐싱)된다는 것**이다. 
 - computed 속성은 해당 속성이 종속된 대상이 변경될 때만 함수를 실행한다. 즉 message 가 변경되지 않는 한, computed 속성인 reversedMessage 를 여러번 요청해도 계산을 다시 하지 않고 계산되어 있던 결과를 즉시 반환한다.
-- 또한 Data.now() 처럼 아무 곳에도 의존하지 않는 computed 속성의 경우 절대로 업데이트되지 않는다.
+
 
 - 이에 반해 메소드를 호출할 시에는 렌더링을 다시 할 때마다 **매번** 함수를  실행한다.
 

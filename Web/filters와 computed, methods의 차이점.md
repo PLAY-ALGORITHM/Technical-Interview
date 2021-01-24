@@ -168,7 +168,7 @@ new Vue({
 |함수로 정의하고 data 객체 등을 사용하여 계산된 값을 리턴해 줌 | 함수로 정의하고 data 객체 등을 사용하여 계산된 값을 리턴해 줌 |
 |data 속성에 변화가 있을 때 자동으로 다시 연산(동일한 요청이 또 올 경우는 함수를 실행하지 않고 캐싱된 값만 리턴) | 캐싱이라는 개념이 없기 때문에 매번 재 렌더링(호출될 때마다 계속 함수를 실행) |
 
-1. computed와 method의 차이점
+1. computed와 method의 차이점 <예시 1>
 
 - 두 방식 모두 같은 결과를 얻을 수 있다.
 ```html
@@ -195,3 +195,69 @@ computed: {
 
 - 이에 반해 메소드를 호출할 시에는 렌더링을 다시 할 때마다 **매번** 함수를  실행한다.
 
+2. computed와 method의 차이점 <예시 2>
+
+```javascript
+    window.onload = function(){
+        var vm1 = new Vue({
+            el : '#test1',
+            data : {
+                a1 : 100,
+                a2 : 200
+        },
+            methods : {
+            test_method : function(){
+                console.log('test method')
+                return this.a1 + this.a2
+            },
+            setValue : function(){
+                this.a1 = 1000
+                this.a2 = 2000
+            },
+            getRandomMethod : function(){
+                return Math.random()
+            }
+        },
+            computed : {
+                test_computed : function(){
+                    console.log('test computed')
+                    return this.a1 + this.a2
+                },
+                getRandomComputed : function(){
+                    return Math.random()
+                }
+            }
+        })
+    }
+```
+```html
+ <div id = 'test1'>
+        <h3>a1 : {{a1}}</h3>
+        <h3>a2 : {{a2}}</h3>
+        <h3>a1 + a2 : {{a1 + a2}}</h3>
+        <h3>test method : {{test_method()}}</h3>
+        <h3>test method : {{test_method()}}</h3>
+        <h3>test method : {{test_method()}}</h3>
+        <h3>test computed : {{test_computed}}</h3>
+        <h3>test computed : {{test_computed}}</h3>
+        <h3>test computed : {{test_computed}}</h3>
+
+        <button type = 'button' @click = 'setValue'>값 변경</button>
+
+        <h3>get random method : {{getRandomMethod()}}</h3>
+        <h3>get random method : {{getRandomMethod()}}</h3>
+        <h3>get random method : {{getRandomMethod()}}</h3>
+
+        <h3>get random computed : {{getRandomComputed}}</h3>
+        <h3>get random computed : {{getRandomComputed}}</h3>
+        <h3>get random computed : {{getRandomComputed}}</h3>
+    </div>
+```
+- 위 예제의 결과창[1]
+![화면 캡처 2021-01-24 182919](https://user-images.githubusercontent.com/73863771/105626460-08fd4c80-5e73-11eb-8e87-525efba13052.png)
+
+- 위 예제의 결과창[2]
+![화면 캡처 2021-01-24 182958](https://user-images.githubusercontent.com/73863771/105626469-19adc280-5e73-11eb-8e2e-44b13cfda1f6.png)
+
+- 위 예제의 결과창[3]
+![화면 캡처 2021-01-24 183202](https://user-images.githubusercontent.com/73863771/105626474-292d0b80-5e73-11eb-9845-57585a04c69b.png)

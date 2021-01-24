@@ -137,6 +137,7 @@ var vm = new Vue({
 })
 ```
 - :bulb: 위 예제의 결과창
+
 ![화면 캡처 2021-01-24 144007](https://user-images.githubusercontent.com/73863771/105622148-28d04880-5e52-11eb-9e8a-8f53b5908999.png)
 
 - 이 예제에서는 computed 속성인 reversedMessage를 선언했다. 우리가 작성한 함수는 vm.reversedMessage 속성에 대한 gatter 함수로 사용된다.
@@ -202,6 +203,7 @@ new Vue({
 - {{howAreYou()}} 로 지정해준 곳에 함수의 결과물이 출력된 것을 확인할 수 있다.
 
 - :bulb: 위 예제의 결과창
+
 ![화면 캡처 2021-01-24 152231](https://user-images.githubusercontent.com/73863771/105622841-1c4eee80-5e58-11eb-81eb-aa433182c3d5.png)
 
 
@@ -299,12 +301,15 @@ computed: {
     </div>
 ```
 - :bulb: 위 예제의 결과창[1]
+
 ![화면 캡처 2021-01-24 182919](https://user-images.githubusercontent.com/73863771/105626460-08fd4c80-5e73-11eb-8e87-525efba13052.png)
 
 - :bulb: 위 예제의 결과창[2]
+
 ![화면 캡처 2021-01-24 182958](https://user-images.githubusercontent.com/73863771/105626469-19adc280-5e73-11eb-8e2e-44b13cfda1f6.png)
 
 - :bulb: 위 예제의 결과창[3]
+
 ![화면 캡처 2021-01-24 183202](https://user-images.githubusercontent.com/73863771/105626474-292d0b80-5e73-11eb-9845-57585a04c69b.png)
 
 

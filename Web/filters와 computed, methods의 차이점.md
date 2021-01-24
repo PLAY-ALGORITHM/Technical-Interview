@@ -266,7 +266,7 @@ methods: {
 ```javascript
 // 컴포넌트 내부
 computed: {
-  reversedMessage: function () {
+  reversedMessage2: function () {
     return this.message.split('').reverse().join('')
   }
 }

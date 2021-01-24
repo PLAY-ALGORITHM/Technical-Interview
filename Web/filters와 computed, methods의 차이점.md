@@ -48,10 +48,6 @@ new Vue({
 - Vue 인스턴스 생성 전 (new Vue() 전)에 전역으로 필터를 정의할 수 있다.
 - 전역 filter의 이름이 로컬 filter와 동일한 경우 로컬 filter가 선호된다.
 
-```html
-<input v-model="message" placeholder="여기를 수정해보세요">
-<p>메시지: {{ message }}</p>
-```
 4. filter chaining 정의
 ```html
 {{ message | filterA | filterB }}
@@ -70,8 +66,79 @@ new Vue({
     3. 세번째 전달 인자 : arg2
 
 ## computed의 사용방식
+- 템플릿 내에 표현식을 넣으면 매우 편리하다. 하지만 간단한 연산일 때만 이러한 방식을 이용하는 것이 좋다. 너무 많은 연산을 템플릿 안에서 하면 코드가 비대해지고 유지 보수가 어렵다.
+
+```html
+<div id="example">
+  {{ message.split('').reverse().join('') }}
+</div>
+```
+위의 템플릿을 보면 message를 역순으로 표기한다는 것을 알 수 있다. 하지만 하나하나 따져서 이해해야 하므로, 복잡해진다면 시간이 오래 걸리고 비효율적이게 된다.
+
+1. 기본 예제
+```html
+<div id="example">
+  <p>원본 메시지: "{{ message }}"</p>
+  <p>역순으로 표시한 메시지: "{{ reversedMessage }}"</p>
+</div>
+```
+```javascript
+var vm = new Vue({
+  el: '#example',
+  data: {
+    message: '안녕하세요'
+  },
+  computed: {
+    // 계산된 getter
+    reversedMessage: function () {
+      // `this` 는 vm 인스턴스를 가리킵니다.
+      return this.message.split('').reverse().join('')
+    }
+  }
+})
+```
+- 위 예제의 결과창
+![화면 캡처 2021-01-24 144007](https://user-images.githubusercontent.com/73863771/105622148-28d04880-5e52-11eb-9e8a-8f53b5908999.png)
+
+- 이 예제에서는 computed 속성인 reversedMessage를 선언했다. 우리가 작성한 함수는 vm.reversedMessage 속성에 대한 gatter 함수로 사용된다.
+
+```javascript
+console.log(vm.reversedMessage) // => '요세하녕안'
+vm.message = 'Goodbye'
+console.log(vm.reversedMessage) // => 'eybdooG'
+```
+- 콘솔에 직접 확인해 볼 수 있다. 
+- vm.reversedMessage 의 값은 항상 vm.message 의 값에 의존한다.
+
+2. computed 속성의 캐싱 vs 메소드
+- 표현식에서 메소드를 호출하여 
+
 
 ## methods의 사용 방식
+- 함수들을 저장하고 있는 곳이 바로 methods 이다.
+```html
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<div id="app">
+  <p>{{ title }}</p>
+  <p>{{ howAreYou() }}</p>
+</div>
+```
+```javascript
+new Vue({ 
+  el: "#app", 
+  data: {
+    title: "안녕 친구들!"
+  },
+  methods: {
+   howAreYou: function () {
+     return "기분이 어때?"
+    }
+  }
+})
+```
+- 위의 코드를 보면 method 내에 howAreYou() 라는 함수를 선언했다.
+- {{howAreYou()}} 로 지정해준 곳에 함수의 결과물이 출력된 것을 확인할 수 있다.
+
 
 ## computed와 methods의 차이
 | computed | methods |

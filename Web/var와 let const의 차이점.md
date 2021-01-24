@@ -22,7 +22,7 @@
 **Reference**
 1. https://dev-taem.tistory.com/14
 
-####  var
+### var
 
  1. ES6 이전의 변수 선언 방식이다.  
  2. function 단위의 scope을 가진다.(function-level-scope)

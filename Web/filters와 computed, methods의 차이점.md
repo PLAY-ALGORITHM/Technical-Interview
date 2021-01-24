@@ -1,4 +1,5 @@
-# filters와 computed, methods의 차이점에 대해 알아보자.
+# :wink: filters와 computed, methods의 차이점에 대해 알아보자.
+----------------------
 
 ## :question: filters란?
 -----------

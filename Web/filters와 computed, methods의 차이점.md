@@ -49,12 +49,9 @@ new Vue({
 - 전역 filter의 이름이 로컬 filter와 동일한 경우 로컬 filter가 선호된다.
 
 ```html
-<div id="example_1" class="demo>
-<input type="text>
-<p></p>
-</div>
+<input v-model="message" placeholder="여기를 수정해보세요">
+<p>메시지: {{ message }}</p>
 ```
-
 4. filter chaining 정의
 ```html
 {{ message | filterA | filterB }}
@@ -69,7 +66,7 @@ new Vue({
 - filter 함수는 일반적인 javascript 함수이기 때문에 두개 이상의 전달 인자를 가질 수 있다.
 - 위 코드의 filterA filter 함수는 3개의 전달 인자를 가진다. 
     1. 첫번째 전달 인자 : message
-    2. 두번째 전달 인자 : arg1
+    2. 두번째 전달 인자 : 'arg1'
     3. 세번째 전달 인자 : arg2
 
 ## computed의 사용방식

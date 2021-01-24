@@ -23,7 +23,7 @@
 ## :zap: filter의 사용방식
 -------------
 
-1. :balloon: 필터 사용방법
+-  :balloon: 필터 사용방법
 
 ```html
 <!-- 중괄호 보간법 -->
@@ -32,7 +32,7 @@
 <!-- v-bind 표현 -->
 <div v-bind:id="rawId | formatId"></div>
 ```
-2. :balloon: 로컬 filter 정의
+-  :balloon: 로컬 filter 정의
 
 ```javascript
 filters: {
@@ -43,7 +43,7 @@ filters: {
   }
 }
 ```
-3. :balloon: 전역 filter 정의
+- :balloon: 전역 filter 정의
 
 ```javascript
 Vue.filter('capitalize', function (value) {
@@ -59,7 +59,7 @@ new Vue({
 - Vue 인스턴스 생성 전 (new Vue() 전)에 전역으로 필터를 정의할 수 있다.
 - 전역 filter의 이름이 로컬 filter와 동일한 경우 로컬 filter가 선호된다.
 
-4. :balloon: filter chaining 정의
+- :balloon: filter chaining 정의
 
 ```html
 {{ message | filterA | filterB }}
@@ -67,9 +67,33 @@ new Vue({
 - filter의 함수는 항상 첫번째 전달인자로 표현식의 값(이전 체이닝의 결과) 를 받게 된다. 
 - 위의 경우, 하나의 인수를 받는 filterA는 message 값을 받을 것이고, filterA가 message와 함께 실행된 결과가 filterB에 넘겨진다.
 
-5. :balloon: filter 함수 전달인자
+- :balloon: filter 함수 전달인자
 ```html
 {{ message | filterA('arg1', arg2) }}
+```
+
+```javascript
+var app2 = new Vue({
+  el: '#app-2',
+  data: {
+    message: 'hello1',
+  },
+  filters : {
+    msg2 : function(v){
+        return v+'hello2!'
+    },
+    msg3 : function(v,a,b){
+        return v+'hello3!'+a+b;
+    }
+  }
+})
+```
+```html
+<div id="app-2">
+      <span v-bind:title="message|msg2|msg3('bye1','bye2')">
+             {{message|msg2|msg3('bye1','bye2')}}
+        </span>
+   </div>
 ```
 - filter 함수는 일반적인 javascript 함수이기 때문에 두개 이상의 전달 인자를 가질 수 있다.
 - 위 코드의 filterA filter 함수는 3개의 전달 인자를 가진다. 
@@ -89,7 +113,7 @@ new Vue({
 ```
 위의 템플릿을 보면 message를 역순으로 표기한다는 것을 알 수 있다. 하지만 하나하나 따져서 이해해야 하므로, 복잡해진다면 시간이 오래 걸리고 비효율적이게 된다.
 
-1. :balloon: 기본 예제
+- :balloon: 기본 예제
 
 ```html
 <div id="example">
@@ -125,7 +149,7 @@ console.log(vm.reversedMessage) // => 'eybdooG'
 - 콘솔에 직접 확인해 볼 수 있다. 
 - vm.reversedMessage 의 값은 항상 vm.message 의 값에 의존한다.
 
-2. :balloon: computed 속성의 setter 함수
+- :balloon: computed 속성의 setter 함수
 
 - computed 속성은 기본적으로 getter 함수만 가지고 있지만, 필요한 경우 setter 함수를 만들어 쓸 수 있다.
 
@@ -189,7 +213,7 @@ new Vue({
 |함수로 정의하고 data 객체 등을 사용하여 계산된 값을 리턴해 줌 | 함수로 정의하고 data 객체 등을 사용하여 계산된 값을 리턴해 줌 |
 |data 속성에 변화가 있을 때 자동으로 다시 연산(동일한 요청이 또 올 경우는 함수를 실행하지 않고 캐싱된 값만 리턴) | 캐싱이라는 개념이 없기 때문에 매번 재 렌더링(호출될 때마다 계속 함수를 실행) |
 
-1. :balloon: computed와 method의 차이점 <예시 1>
+- :balloon: computed와 method의 차이점 <예시 1>
 
 - 두 방식 모두 같은 결과를 얻을 수 있다.
 ```html
@@ -216,7 +240,7 @@ computed: {
 
 - 이에 반해 메소드를 호출할 시에는 렌더링을 다시 할 때마다 **매번** 함수를  실행한다.
 
-2. :balloon: computed와 method의 차이점 <예시 2>
+- :balloon: computed와 method의 차이점 <예시 2>
 
 ```javascript
     window.onload = function(){
@@ -282,3 +306,17 @@ computed: {
 
 - :bulb: 위 예제의 결과창[3]
 ![화면 캡처 2021-01-24 183202](https://user-images.githubusercontent.com/73863771/105626474-292d0b80-5e73-11eb-9845-57585a04c69b.png)
+
+
+- **Reference**
+
+https://levelup.gitconnected.com/how-to-use-vuejs-filters-to-write-better-code-4d038bc15e7d
+https://vuejs.org/v2/guide/computed.html
+https://negabaro.github.io/archive/vuejs-computed__watch__methods
+https://webkimsora.tistory.com/53
+http://itnovice1.blogspot.com/2019/01/vue-computed-watch-methods.html
+https://vueschool.io/lessons/vuejs-computed-properties?friend=vuejs
+https://m.blog.naver.com/PostView.nhn?blogId=bkcaller&logNo=221461605896&proxyReferer=https:%2F%2Fwww.google.com%2F
+https://sodocumentation.net/ko/vue-js/topic/1878/%EB%A7%9E%EC%B6%A4-%ED%95%84%ED%84%B0
+https://goodteacher.tistory.com/200
+https://blog.naver.com/ineedsky/221600126643

@@ -71,7 +71,13 @@ new Vue({
 ```html
 {{ message | filterA('arg1', arg2) }}
 ```
+- filter 함수는 일반적인 javascript 함수이기 때문에 두개 이상의 전달 인자를 가질 수 있다.
+- 위 코드의 filterA filter 함수는 3개의 전달 인자를 가진다. 
+    1. 첫번째 전달 인자 : message
+    2. 두번째 전달 인자 : 'arg1'
+    3. 세번째 전달 인자 : arg2
 
+- 위의 예시보다 이해가 쉽게 설명해 보겠다.
 ```javascript
 var app2 = new Vue({
   el: '#app-2',
@@ -95,11 +101,6 @@ var app2 = new Vue({
         </span>
    </div>
 ```
-- filter 함수는 일반적인 javascript 함수이기 때문에 두개 이상의 전달 인자를 가질 수 있다.
-- 위 코드의 filterA filter 함수는 3개의 전달 인자를 가진다. 
-    1. 첫번째 전달 인자 : message
-    2. 두번째 전달 인자 : 'arg1'
-    3. 세번째 전달 인자 : arg2
 
 ## :zap: computed의 사용방식
 --------------

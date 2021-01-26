@@ -17,16 +17,14 @@ Spring이라 불리는 이유 = 개발자들의 겨울이 끝났다!
 
 
 # Spring boot 란?
-
-![thread](./image/image (2).png)
-![thread](./image/image (3).png)
-![thread](./image/image (4).png)
+[image (1)](https://user-images.githubusercontent.com/61037197/105848501-64217180-6022-11eb-89cb-b989d8bc7e20.png)
+![image (2)](https://user-images.githubusercontent.com/61037197/105848884-f4f84d00-6022-11eb-8d91-f243c07a7467.png)
 
 
 - 자바 프로그램을 만들기 위한 노하우들이 다 뭉쳐있음
 - 스프링 부트는 스프링 프레임워크라는 큰 틀에 속하는 도구 
 
-![thread](./image/image (9).png)
+<img width="590" alt="img9" src="https://user-images.githubusercontent.com/61037197/105848958-0fcac180-6023-11eb-8feb-1582dc2b30e9.png">
 
 - spring과의 차이
     1. Embed Tomcat을 사용하기 때문에, (Spring Boot 내부에 Tomcat이 포함되어있다.) 따로 Tomcat을 설치하거나 매번 버전을 관리해 주어야 하는 수고로움을 덜어준다.
@@ -44,9 +42,10 @@ Spring이라 불리는 이유 = 개발자들의 겨울이 끝났다!
 # 특징 자세히 
 
 1. dependency
-![thread](./image/img (5).png)
-![thread](./image/img (6).png)
-![thread](./image/img (7).png)
+<img width="838" alt="img5" src="https://user-images.githubusercontent.com/61037197/105849053-34bf3480-6023-11eb-8be0-542dab503c6d.png">
+<img width="841" alt="img6" src="https://user-images.githubusercontent.com/61037197/105849087-41438d00-6023-11eb-978e-190d762a1742.png">
+<img width="841" alt="img6" src="https://user-images.githubusercontent.com/61037197/105849087-41438d00-6023-11eb-978e-190d762a1742.png">
+
 
 
 2. Spring Boot Starter

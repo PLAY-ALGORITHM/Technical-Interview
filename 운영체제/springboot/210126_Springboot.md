@@ -44,7 +44,7 @@ Spring이라 불리는 이유 = 개발자들의 겨울이 끝났다!
 1. dependency
 <img width="838" alt="img5" src="https://user-images.githubusercontent.com/61037197/105849053-34bf3480-6023-11eb-8be0-542dab503c6d.png">
 <img width="841" alt="img6" src="https://user-images.githubusercontent.com/61037197/105849087-41438d00-6023-11eb-978e-190d762a1742.png">
-<img width="841" alt="img6" src="https://user-images.githubusercontent.com/61037197/105849087-41438d00-6023-11eb-978e-190d762a1742.png">
+
 
 
 

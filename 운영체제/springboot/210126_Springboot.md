@@ -17,7 +17,7 @@ Spring이라 불리는 이유 = 개발자들의 겨울이 끝났다!
 
 
 # Spring boot 란?
-[image (1)](https://user-images.githubusercontent.com/61037197/105848501-64217180-6022-11eb-89cb-b989d8bc7e20.png)
+![image (1)](https://user-images.githubusercontent.com/61037197/105849233-7059fe80-6023-11eb-8d7b-5ad28b15ed4e.png)
 ![image (2)](https://user-images.githubusercontent.com/61037197/105848884-f4f84d00-6022-11eb-8d91-f243c07a7467.png)
 
 

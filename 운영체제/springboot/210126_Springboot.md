@@ -5,7 +5,7 @@
 
 Spring이라 불리는 이유 = 개발자들의 겨울이 끝났다!
 
-![thread](./image/image (1).png)
+![image](https://user-images.githubusercontent.com/61037197/105848608-916e1f80-6022-11eb-95f0-f75db2b0903a.png)![image !
 
 - 자바 플랫폼을 기반으로 만들어진 오픈소스 프레임워크로 간단하게 스프링이라 불림.
 - JAVA를 이용한 기술인 JSP, MyBatis, JPA등의 기술들을 더 편하게 사용하기 위해 만들어짐

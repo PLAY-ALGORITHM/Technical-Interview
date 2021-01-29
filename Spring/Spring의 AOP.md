@@ -183,6 +183,7 @@ class AAAABBBB {
 |Around|\<aop:around\>|@Around|target객체의 메소드 실행 전, 후 또는 예외 발생 시점에 모두 실행해야할 로직을 담아야 할 경우|
 
 ![enter image description here](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=http://cfile26.uf.tistory.com/image/2379DB3E58496AA7079CEF)
+
 @Around는 **어드바이스**입니다.  
 앞서 설명드린것 처럼 어드바이스는 애스펙트가 "무엇을", "언제" 할지를 의미하고 있습니다.  
 여기서 "무엇"은 calculatePerformanceTime() 메소드를 나타냅니다.  

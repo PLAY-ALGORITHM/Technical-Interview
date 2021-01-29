@@ -710,7 +710,7 @@ public class Test {
 </aop:aspect>
 ```
 
-@Aspect : public class Xxxx() {... }  바로 위에 선언
+@Aspect : public class Xxxx() {... }  바로 위에 선언 <br>
 @Around("within(model.domain.annotation.*)")  :   public Object aroundAspect(ProceedingJoinPoint point) { ..... }  바로 위에 선언
 
 **@Aspect**   

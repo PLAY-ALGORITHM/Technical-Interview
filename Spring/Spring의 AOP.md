@@ -691,10 +691,7 @@ public class Test {
 **@Component("biz")**  = 
 
 ```xml
-<!-- 핵심(biz, core)과 공통(aspect)을 스프링 빈으로 등록 --> 
 <bean id="biz" class="step02.biz.aop.Car" />  
-
-<!-- 핵심로직 실행 전, 후 공통 로직 적용 핵심의 어떤 메소드들에 공통 로직 적용할지도 결정을 해야함 어떤 핵심 로직의 메소드에 어떤 공통로직의 메소드를 정해진 시점에 적용 spring은 aspectj라는 framework 활용 - 기능을 메소드에만 적용 + 표현법은 그대로 사용 -->  
 ```
 **@Component("common")**  = 
 ```xml

@@ -63,7 +63,7 @@ class AAAABBBB {
 	}
 }
  ```
-	### **AOP하면   '공통된 기능을 재사용' 하는 기법!**
+### **AOP하면   '공통된 기능을 재사용' 하는 기법!**
 	
 ## :question: 핵심기능 관점과 부가기능 관점
 
@@ -183,6 +183,7 @@ class AAAABBBB {
 |Around|\<aop:around\>|@Around|target객체의 메소드 실행 전, 후 또는 예외 발생 시점에 모두 실행해야할 로직을 담아야 할 경우|
 
 ![enter image description here](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=http://cfile26.uf.tistory.com/image/2379DB3E58496AA7079CEF)
+
 @Around는 **어드바이스**입니다.  
 앞서 설명드린것 처럼 어드바이스는 애스펙트가 "무엇을", "언제" 할지를 의미하고 있습니다.  
 여기서 "무엇"은 calculatePerformanceTime() 메소드를 나타냅니다.  
@@ -690,10 +691,7 @@ public class Test {
 **@Component("biz")**  = 
 
 ```xml
-<!-- 핵심(biz, core)과 공통(aspect)을 스프링 빈으로 등록 --> 
 <bean id="biz" class="step02.biz.aop.Car" />  
-
-<!-- 핵심로직 실행 전, 후 공통 로직 적용 핵심의 어떤 메소드들에 공통 로직 적용할지도 결정을 해야함 어떤 핵심 로직의 메소드에 어떤 공통로직의 메소드를 정해진 시점에 적용 spring은 aspectj라는 framework 활용 - 기능을 메소드에만 적용 + 표현법은 그대로 사용 -->  
 ```
 **@Component("common")**  = 
 ```xml
@@ -709,7 +707,7 @@ public class Test {
 </aop:aspect>
 ```
 
-@Aspect : public class Xxxx() {... }  바로 위에 선언
+@Aspect : public class Xxxx() {... }  바로 위에 선언 <br>
 @Around("within(model.domain.annotation.*)")  :   public Object aroundAspect(ProceedingJoinPoint point) { ..... }  바로 위에 선언
 
 **@Aspect**   

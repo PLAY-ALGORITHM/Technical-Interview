@@ -575,5 +575,267 @@ public class MainClass {
 - property를 사용할때는 꼭 setter()가 있어야하고, constructor-arg를 사용할때는 생성자가 있어야 한다.  
 ----------------------------
 
+## JAVA를 이용한 예제
 
+- applicationContext.xml
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+ 
+ 
+<!-- id가 cat1이고, diEx2패키지에 있는 MyCats클래스를 뜻하는 bean(객체) 생성 -->
+<bean id="cat1" class="diEx3.MyCats">
+    <constructor-arg> <!-- 생성자를 이용 -->
+        <value>나비</value>
+    </constructor-arg>
+    <constructor-arg>
+        <value>2</value>
+    </constructor-arg>
+    <constructor-arg>
+        <list><!-- 배열일 경우에 사용 -->
+            <value>잠자기</value>
+            <value>꾹꾹이</value>
+        </list>
+    </constructor-arg>
+    <property name="weight" value="2.0"/><!-- property를 이용 -->
+    <property name="color" value="black"/>
+</bean>
+ 
+<!-- 두번째 고양이 -->
+<bean id="cat2" class="diEx3.MyCats">
+    <constructor-arg value="호랑이"/>
+    <constructor-arg value="1" />
+    <constructor-arg>
+        <list>
+            <value>우다다</value>
+            <value>박치기</value>
+        </list>
+    </constructor-arg>
+    <property name="weight" value="3.2"/>
+    <property name="color" value="white"/>
+</bean>
+ 
+<!-- id가 catsInfo이고, diEx2패키지에 있는 Cats클래스를 뜻하는 bean(객체) 생성 -->
+<bean id="catsInfo" class="diEx3.Cats">
+    <!-- catsInfo라는 bean은 위에서 만든 cat1이라는 bean(객체)를 참조함 -->
+    <constructor-arg>
+        <ref bean="cat1" />
+    </constructor-arg>
+</bean>
+ 
+</beans>
 
+```
+
+- MyCats.java
+```java
+package diEx3;
+ 
+import java.util.ArrayList;
+ 
+public class MyCats {
+ 
+    private String name;
+    private int age;
+    private ArrayList<String> hobbys;
+    private double weight;
+    private String color;
+ 
+    
+    // 생성자를 통해 name, age, hobbys를 받아와 각각의 필드의 값들을 초기화 시켜줌
+    public MyCats(String name, int age, ArrayList<String> hobbys) {
+        this.name = name;
+        this.age = age;
+        this.hobbys = hobbys;
+    }
+    
+    public double getWeight() {
+        return weight;
+    }
+ 
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+ 
+    public String getColor() {
+        return color;
+    }
+ 
+    public void setColor(String color) {
+        this.color = color;
+    }
+ 
+    public String getName() {
+        return name;
+    }
+ 
+    public int getAge() {
+        return age;
+    }
+ 
+    public ArrayList<String> getHobbys() {
+        return hobbys;
+    }
+ 
+    public void setName(String name) {
+        this.name = name;
+    }
+ 
+    public void setAge(int age) {
+        this.age = age;
+    }
+ 
+    public void setHobbys(ArrayList<String> hobbys) {
+        this.hobbys = hobbys;
+    }
+}
+
+```
+
+- Cats.java
+```java
+package diEx3;
+ 
+ 
+public class Cats {
+ 
+private MyCats myCats;
+    
+    //생성자를 통해 myCats를 인수로 받아와서 myCats를 초기화시켜줌
+    public Cats(MyCats myCats){
+        this.myCats = myCats;
+    }
+    
+    public void getMyCatsInfo(){
+        System.out.println("==============");
+        System.out.println("야옹이 이름 : "+myCats.getName());
+        System.out.println("야옹이 나이 : "+myCats.getAge());
+        System.out.println("야옹이 취미 : "+myCats.getHobbys());
+        System.out.println("야옹이 몸무게 : "+myCats.getWeight());
+        System.out.println("야옹이 색 : "+myCats.getColor());
+        System.out.println("==============");
+    }
+    
+    //받아온 myCats값을 넣어줌
+    public void setMyCatsInfo(MyCats myCats){
+        this.myCats = myCats;
+    }
+ 
+}
+
+```
+
+- ApplicationContext.java
+```java
+package diEx3;
+ 
+import java.util.ArrayList;
+ 
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+ 
+@Configuration // 스프링 설정에 사용되는 클래스임을 명시해주는 어노테이션
+public class ApplicationContext {
+ 
+    @Bean // 객체를 생성하는 어노테이션
+    public MyCats cat1(){
+        
+        ArrayList<String> hobbys = new ArrayList<String>();
+        hobbys.add("잠자기");
+        hobbys.add("꾹꾹이");
+        
+        MyCats myCats = new MyCats("나비",2,hobbys); //생성자
+        myCats.setWeight(2.0);                     //setter()
+        myCats.setColor("black");                  //setter()
+        
+        return myCats;                            //MyCats 객체 리턴
+    }
+    
+    @Bean
+    public MyCats cat2(){
+        
+        ArrayList<String> hobbys = new ArrayList<String>();
+        hobbys.add("우다다");
+        hobbys.add("박치기");
+        
+        MyCats myCats = new MyCats("호랑이",1,hobbys);
+        myCats.setWeight(3.2);
+        myCats.setColor("white");
+        
+        return myCats;
+    }
+    
+    @Bean
+    public Cats catsInfo(){
+        
+        Cats cats = new Cats(this.cat1());
+        
+        return cats;
+    }
+}
+ 
+```
+
+- JAVA파일에서는 어노테이션을 이용해서 객체를 생성해준다.
+- @Configuration - "이 클래스는 스프링 설정에 사용되는 클래스입니다." 라고 명시해주는 어노테이션이다.
+- @Bean - 객체를 생성하는 어노테이션이다.
+
+- MainClass.java
+```java
+package diEx3;
+ 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+ 
+ 
+public class MainClass {
+ 
+    public static void main(String[] args) {
+        
+        AnnotationConfigApplicationContext ctx = 
+                new AnnotationConfigApplicationContext(ApplicationContext.class);
+        
+        Cats catsInfo = ctx.getBean("catsInfo",Cats.class);
+        catsInfo.getMyCatsInfo();
+        
+        MyCats cat2 = ctx.getBean("cat2",MyCats.class);
+        catsInfo.setMyCatsInfo(cat2);
+        catsInfo.getMyCatsInfo();
+        
+        ctx.close();
+        
+    }
+ 
+}
+
+```
+
+- JAVA파일에서는 어노테이션을 이용해서 bean을 설정해주었기 때문에 xml에서 설정해주었을때 객체를 가져오기 위해 사용했던 클래스가 아닌 AnnotationConfigApplicationContext 클래스를 이용하여 context를 불러온다.
+
+### 결과값
+
+==============
+야옹이 이름 : 나비
+야옹이 나이 : 2
+야옹이 취미 : [잠자기, 꾹꾹이]
+야옹이 몸무게 : 2.0
+야옹이 색 : black
+==============
+==============
+야옹이 이름 : 호랑이
+야옹이 나이 : 1
+야옹이 취미 : [우다다, 박치기]
+야옹이 몸무게 : 3.2
+야옹이 색 : white
+==============
+
+### 총 정리
+
+- xml이나 java 파일 모두 각자의 스타일에 맞춰서 사용 가능하다.
+- 스프링부트에서는 대부분 java파일에서 설정해 준다고 한다.
+
+**Reference**
+- https://jhleed.tistory.com/61
+- https://private.tistory.com/39
+- https://gmlwjd9405.github.io/2018/11/09/dependency-injection.html

@@ -16,6 +16,6 @@
 - AJYeom
 
 #### 2021년 1월 29일
-#### [Web] Spring AOP
+#### [Spring] Spring AOP
 - JWJang
 

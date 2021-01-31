@@ -249,11 +249,9 @@ private MyCats myCats;
 	}
 	
 	public void getMyCatsInfo(){
-		System.out.println("==============");
 		System.out.println("야옹이 이름 : "+myCats.getName());
 		System.out.println("야옹이 나이 : "+myCats.getAge());
 		System.out.println("야옹이 취미 : "+myCats.getHobbys());
-		System.out.println("==============");
 	}
 	
 }
@@ -415,11 +413,11 @@ public class MainClass {
 
 ### 결과값
 
-==============
+
 야옹이 이름 : 나비
 야옹이 나이 : 2
 야옹이 취미 : [잠자기, 꾹꾹이]
-==============
+
 
 
 - applicationContext.xml
@@ -494,11 +492,11 @@ private MyCats myCats;
 	}
 	
 	public void getMyCatsInfo(){
-		System.out.println("==============");
+	
 		System.out.println("야옹이 이름 : "+myCats.getName());
 		System.out.println("야옹이 나이 : "+myCats.getAge());
 		System.out.println("야옹이 취미 : "+myCats.getHobbys());
-		System.out.println("==============");
+
 	}
 	
 	//**받아온 myCats값을 넣어줌**
@@ -559,16 +557,15 @@ public class MainClass {
 
 ### 결과값
 
-==============
+
 야옹이 이름 : 나비
 야옹이 나이 : 2
 야옹이 취미 : [잠자기, 꾹꾹이]
-==============
-==============
+
 야옹이 이름 : 호랑이
 야옹이 나이 : 1
 야옹이 취미 : [우다다, 박치기]
-==============
+
 
 ### 총 정리
 
@@ -709,13 +706,13 @@ private MyCats myCats;
     }
     
     public void getMyCatsInfo(){
-        System.out.println("==============");
+       
         System.out.println("야옹이 이름 : "+myCats.getName());
         System.out.println("야옹이 나이 : "+myCats.getAge());
         System.out.println("야옹이 취미 : "+myCats.getHobbys());
         System.out.println("야옹이 몸무게 : "+myCats.getWeight());
         System.out.println("야옹이 색 : "+myCats.getColor());
-        System.out.println("==============");
+     
     }
     
     //받아온 myCats값을 넣어줌
@@ -815,20 +812,19 @@ public class MainClass {
 
 ### 결과값
 
-==============
+
 야옹이 이름 : 나비
 야옹이 나이 : 2
 야옹이 취미 : [잠자기, 꾹꾹이]
 야옹이 몸무게 : 2.0
 야옹이 색 : black
-==============
-==============
+
 야옹이 이름 : 호랑이
 야옹이 나이 : 1
 야옹이 취미 : [우다다, 박치기]
 야옹이 몸무게 : 3.2
 야옹이 색 : white
-==============
+
 
 ### 총 정리
 
